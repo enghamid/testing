@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import * 
 
-
+# terminal class
 class EmbTerminal(QWidget):
     def __init__(self, parent=None):
         super(EmbTerminal, self).__init__(parent)
@@ -14,7 +14,7 @@ class EmbTerminal(QWidget):
         self.process.start('urxvt',['-embed', str(int(self.winId()))])
         self.setFixedSize(640, 480)
 
-
+# windows class
 class mainWindow(QMainWindow):
     def __init__(self, parent=None):
         super(mainWindow, self).__init__(parent)
@@ -30,7 +30,7 @@ class mainWindow(QMainWindow):
         tab_widget.addTab(QTextEdit(), "QTextEdit")
         tab_widget.addTab(QMdiArea(), "QMdiArea")
 
-
+# main of program
 if __name__ == '__main__':
     
     app = QApplication(sys.argv)
